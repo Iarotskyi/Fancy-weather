@@ -1,0 +1,324 @@
+@font-face {
+  font-family: 'Averia Sans';
+  src: url(fonts/a9da1961d953db8a6621.ttf)
+}
+
+@font-face {
+  font-family: 'Averia Sans Bold';
+  src: url(fonts/aef70486adc14c8157a1.ttf)
+}
+
+main .coordinates, main .info-box .forecast li, main .info-box .main-box, main .info-box .upper-box, header .switch-item {
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0 15px #0f0f0f;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+
+@keyframes btn-bg-hover-animation {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.25);
+  }
+}
+@keyframes btn-switch-hover-animation {
+  from {
+    opacity: 50%;
+    transform: scale(1);
+  }
+  to {
+    opacity: 100%;
+    transform: scale(1.25);
+  }
+}
+@keyframes btn-voice-and-search-hover-animation {
+  from {
+    text-shadow: 0 0 0 #0f0f0f;
+    color: #0f0f0f;
+  }
+  to {
+    text-shadow: 0 0 15px #0f0f0f;
+    color: #b99800;
+  }
+}
+@keyframes micro-active-animation {
+  from {
+    text-shadow: 0 0 0 #ff0000;
+  }
+  to {
+    text-shadow: 0 0 25px #ff0000;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  color: #0f0f0f;
+  font-family: "Averia Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  background: none;
+  border: none;
+}
+
+body {
+  color: #0f0f0f;
+  font-family: "Averia Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  min-height: 100vh;
+  min-width: 320px;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.5rem 5vw;
+}
+header .btn-refresh {
+  background: url(images/145a9bb2a1af813445e8.png) center no-repeat;
+  background-size: cover;
+  box-shadow: 0 0 15px #0f0f0f;
+  cursor: pointer;
+  color: #ffffff;
+  height: 50px;
+  width: 50px;
+  font-size: 30px;
+}
+header .btn-refresh:hover {
+  animation: btn-bg-hover-animation 0.25s ease-in;
+  animation-fill-mode: forwards;
+}
+header .search-bar,
+header .switch {
+  align-self: center;
+  display: flex;
+  padding: 0.5rem;
+}
+header .switch-item {
+  border-radius: 30px;
+  margin: 0 0.5rem;
+  padding: 0 0.5rem;
+}
+header .switch-item > button {
+  align-self: center;
+  padding: 0.25rem;
+  position: relative;
+  z-index: 1;
+  transition: 0.33s all ease;
+}
+header .switch-item > button > i {
+  font-size: 1.25rem;
+  position: absolute;
+  right: 50%;
+  transform: translate(50%, -0.75rem);
+}
+header .btn-EN,
+header .btn-PL,
+header .btn-imperial,
+header .btn-metric {
+  cursor: pointer;
+  opacity: 25%;
+  font-family: "Averia Sans", sans-serif;
+  font-weight: 400;
+}
+header .btn-EN > i,
+header .btn-PL > i,
+header .btn-imperial > i,
+header .btn-metric > i {
+  opacity: 0;
+}
+header .btn-EN.active,
+header .btn-PL.active,
+header .btn-imperial.active,
+header .btn-metric.active {
+  opacity: 100%;
+  font-family: "Averia Sans Bold", sans-serif;
+  font-weight: 900;
+}
+header .btn-EN.active > i,
+header .btn-PL.active > i,
+header .btn-imperial.active > i,
+header .btn-metric.active > i {
+  opacity: 100%;
+}
+header .btn-EN.inactive:hover,
+header .btn-PL.inactive:hover,
+header .btn-imperial.inactive:hover,
+header .btn-metric.inactive:hover {
+  animation: btn-switch-hover-animation 0.25s ease-in;
+  animation-fill-mode: forwards;
+}
+header .btn-imperial:before,
+header .btn-metric:before {
+  content: "o";
+  vertical-align: super;
+  font-size: 75%;
+}
+header .search-input {
+  color: #0f0f0f;
+  font-family: "Averia Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  border-radius: 1rem;
+  width: 250px;
+  height: 30px;
+  padding: 0 10px;
+}
+header .search-input:focus {
+  outline: none;
+}
+header .btn-search,
+header .btn-voice {
+  cursor: pointer;
+  padding: 7.5px;
+  position: absolute;
+  z-index: 1;
+}
+header .btn-search:hover,
+header .btn-voice:hover {
+  animation: btn-voice-and-search-hover-animation 0.25s ease-in;
+  animation-fill-mode: forwards;
+}
+header .btn-voice {
+  transform: translateX(200px);
+}
+header .btn-voice.active {
+  color: #ff0000;
+  animation: micro-active-animation 0.5s ease-in;
+  animation-iteration-count: infinite;
+}
+header .btn-search {
+  transform: translateX(235px);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem 10vw;
+}
+main .info-box .upper-box {
+  display: inline-block;
+}
+main .info-box .upper-box .location {
+  font-size: 1.5rem;
+}
+main .info-box .main-box {
+  margin: 1rem 0;
+}
+main .info-box .main-box .temperature {
+  align-items: center;
+  display: flex;
+  font-size: 5rem;
+}
+main .info-box .main-box .temperature > div {
+  margin: 0 0.25rem;
+}
+main .info-box .main-box .temperature .weather {
+  height: 6rem;
+  width: 6rem;
+}
+main .info-box .main-box .temperature .value:after {
+  content: "o";
+  vertical-align: super;
+  font-size: 60%;
+}
+main .info-box .main-box .temperature .unit {
+  font-size: 3.5rem;
+}
+main .info-box .main-box .temperature .description {
+  margin-left: 2rem;
+  font-size: 2rem;
+}
+main .info-box .main-box .addInfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+main .info-box .main-box .addInfo li > i {
+  align-self: center;
+  font-size: 2.5rem;
+  padding: 0 1rem;
+}
+main .info-box .main-box .addInfo .addInfo-item {
+  margin: 1rem;
+  display: flex;
+}
+main .info-box .main-box .addInfo .addInfo-item > div:first-child {
+  display: block;
+}
+main .info-box .main-box .addInfo .addInfo-item > div > span {
+  font-size: 1.25rem;
+}
+main .info-box .main-box .addInfo .feels-like-value:after {
+  content: "o";
+  vertical-align: super;
+  font-size: 75%;
+}
+main .info-box .forecast {
+  display: flex;
+  margin: 2rem 0;
+}
+main .info-box .forecast li {
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.25rem;
+  display: flex;
+  margin: 0 1vw;
+  padding: 1rem;
+}
+main .info-box .forecast li .weather {
+  height: 4rem;
+  width: 4rem;
+}
+main .info-box .forecast li .value {
+  font-size: 1.5rem;
+}
+main .info-box .forecast li .value:after {
+  content: "o";
+  vertical-align: super;
+  font-size: 75%;
+}
+main #mapid {
+  box-shadow: 0 0 25px #0f0f0f;
+  height: 25vw;
+  width: 25vw;
+}
+main .coordinates {
+  display: inline-block;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+@media only screen and (max-width: 1250px) {
+  header {
+    padding: 1.5rem 2vw;
+    justify-content: center;
+  }
+
+  main {
+    padding: 1rem 2vw;
+    justify-content: center;
+  }
+  main .info-box {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  main .info-box .main-box .addInfo {
+    justify-content: center;
+  }
+  main #mapid {
+    height: 60vw;
+    width: 60vw;
+  }
+}
