@@ -8,8 +8,8 @@
   src: url(fonts/aef70486adc14c8157a1.ttf)
 }
 
-main .coordinates, main .info-box .forecast li, main .info-box .main-box, main .info-box .upper-box, header .switch-item {
-  background: rgba(255, 255, 255, 0.75);
+main .coordinates, main .info-box .forecast li, main .info-box .main-box, main .info-box .upper-box, header .search-input, header .switch-item {
+  background: rgba(49, 94, 166, 0.9);
   box-shadow: 0 0 15px #0f0f0f;
   border-radius: 1rem;
   padding: 0.5rem;
@@ -26,7 +26,7 @@ main .coordinates, main .info-box .forecast li, main .info-box .main-box, main .
 @keyframes btn-switch-hover-animation {
   from {
     opacity: 50%;
-    transform: #0f0f0f;
+    transform: scale(1);
   }
   to {
     opacity: 100%;
@@ -36,7 +36,7 @@ main .coordinates, main .info-box .forecast li, main .info-box .main-box, main .
 @keyframes btn-voice-and-search-hover-animation {
   from {
     text-shadow: 0 0 0 #0f0f0f;
-    color: #0f0f0f;
+    color: #ffffff;
   }
   to {
     text-shadow: 0 0 15px #0f0f0f;
@@ -61,7 +61,7 @@ ul {
 }
 
 button {
-  color: #0f0f0f;
+  color: #ffffff;
   font-family: "Averia Sans", sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -70,7 +70,7 @@ button {
 }
 
 body {
-  color: #0f0f0f;
+  color: #ffffff;
   font-family: "Averia Sans", sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -164,11 +164,12 @@ header .btn-metric:before {
   font-size: 75%;
 }
 header .search-input {
-  color: #0f0f0f;
+  color: #ffffff;
   font-family: "Averia Sans", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   border-radius: 1rem;
+  border: none;
   width: 250px;
   height: 30px;
   padding: 0 10px;
@@ -176,10 +177,14 @@ header .search-input {
 header .search-input:focus {
   outline: none;
 }
+header .search-input::placeholder {
+  color: #ffffff;
+  opacity: 50%;
+}
 header .btn-search,
 header .btn-voice {
   cursor: pointer;
-  padding: 7.5px;
+  padding: 6px;
   position: absolute;
   z-index: 1;
 }
